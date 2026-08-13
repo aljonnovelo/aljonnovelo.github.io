@@ -1,7 +1,8 @@
 const browserSync = require('browser-sync').create();
 const cp = require('child_process');
 
-const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const isWindows = process.platform === 'win32';
+const jekyll = isWindows ? 'cmd.exe' : 'jekyll';
 
 const scssPath = '_scss/**/*.scss';
 const jsPath = '_scripts/*.js';
@@ -18,22 +19,31 @@ module.exports = gulp => {
     browserSync.reload();
     done();
   };
-  // run `jekyll build`
+
+  // Run `jekyll build`
   gulp.task('jekyll-build', done => {
-    return cp.spawn(jekyll, ['build'], { stdio: 'inherit' }).on('close', done);
+    const args = isWindows
+      ? ['/c', 'jekyll', 'build']
+      : ['build'];
+
+    return cp
+      .spawn(jekyll, args, { stdio: 'inherit' })
+      .on('close', done);
   });
 
-  // run `jekyll build` with _config_dev.yml
+  // Run `jekyll build` with _config_dev.yml
   gulp.task('jekyll-dev', done => {
+    const args = isWindows
+      ? ['/c', 'jekyll', 'build', '--config', '_config.yml,_config_dev.yml']
+      : ['build', '--config', '_config.yml,_config_dev.yml'];
+
     return cp
-      .spawn(jekyll, ['build', '--config', '_config.yml,_config_dev.yml'], {
-        stdio: 'inherit',
-      })
+      .spawn(jekyll, args, { stdio: 'inherit' })
       .on('close', done);
   });
 
   // Rebuild Jekyll then reload the page
-  gulp.task('jekyll-rebuild', gulp.series(['jekyll-dev', reloadBrowser]));
+  gulp.task('jekyll-rebuild', gulp.series('jekyll-dev', reloadBrowser));
 
   gulp.task(
     'serve',
@@ -44,8 +54,8 @@ module.exports = gulp => {
         },
       });
 
-      gulp.watch(scssPath, gulp.series(['sass', reloadBrowser]));
-      gulp.watch(jsPath, gulp.series(['scripts', reloadBrowser]));
+      gulp.watch(scssPath, gulp.series('sass', reloadBrowser));
+      gulp.watch(jsPath, gulp.series('scripts', reloadBrowser));
       gulp.watch(templatePath, gulp.task('jekyll-rebuild'));
     })
   );

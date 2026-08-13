@@ -1,18 +1,19 @@
 # Site settings
 name: Aljon Novelo
 title: Aljon Novelo | Software Engineer
-description: a Computer Science student who's into building systems, solving problems with code, and creating impact through tech and community work.
-url: https://aanovelo.github.io/
+description: an aspiring Software Engineer who's into building systems, solving problems with code, and creating impact through tech and community work.
+url: https://aljonnovelo.github.io/
 baseurl: ''
 email: aanovelo@up.edu.ph
-cover: https://aanovelo.github.io/img/og.png
-logo: https://aanovelo.github.io/img/emojis/desktop.png
-resume: https://aanovelo.github.io/resume.pdf
+cover: https://aljonnovelo.github.io/img/og.png
+logo: https://aljonnovelo.github.io/img/emojis/desktop.png
+resume: https://aljonnovelo.github.io/resume.pdf
+cv: https://aljonnovelo.github.io/cv.pdf
 social:
   - title: email
     url: mailto:aanovelo@up.edu.ph
   - title: github
-    url: https://github.com/aanovelo
+    url: https://github.com/aljonnovelo
   - title: linkedin
     url: https://www.linkedin.com/in/aljon-novelo/
 

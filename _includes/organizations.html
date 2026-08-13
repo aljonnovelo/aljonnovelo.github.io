@@ -1,8 +1,8 @@
 <section class="section experience">
-  <div class="section__title">Work Experience</div>
+  <div class="section__title">Organizational Experience</div>
   <div class="section__content">
     <div class="jobs">
-      {% for job in site.data.experience %}
+      {% for job in site.data.organizations %}
       <div class="job">
         <div class="time-place">
           <div class="job__company-position">
@@ -16,14 +16,17 @@
         <div class="job__activities">
           <ul>
             {% for activity in job.activities %}
-            <li>{{activity}}</li>
+            <li><span style="font-weight: 500;">{{activity.title}}</span>, <i>{{activity.event}}</i></li>
+            <ul>
+              {% for contribution in activity.contributions %}
+              <li>• {{contribution}}</li>
+              {% endfor %}
+            </ul>
+            <br>
             {% endfor %}
           </ul>
         </div>
       {% endfor %}
     </div>
-    
-    <a href="{{site.resume}}" target="_blank" class="arrow-link">View My Resume</a>
-    <a href="{{site.cv}}" target="_blank" class="arrow-link">View My Curriculum Vitae</a>
   </div>
 </section>
