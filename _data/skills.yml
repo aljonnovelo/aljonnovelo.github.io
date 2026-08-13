@@ -1,7 +1,5 @@
 languages:
   - item: Python
-  - item: HTML
-  - item: CSS
   - item: JavaScript
   - item: C
   - item: Java
@@ -9,14 +7,7 @@ languages:
   - item: Assembly
   - item: Dart
   - item: SQL
-  - item: COBOL
-  - item: Prolog
-  - item: Scheme
-  - item: Erlang
-  - item: Rust
   - item: C++
-  - item: VHDL
-
 
 frameworks:
   - item: Flutter
@@ -28,22 +19,14 @@ frameworks:
 
 tools:
   - item: RStudio
-  - item: Git & Github
+  - item: GitHub
   - item: Bash  
   - item: MongoDB  
-  - item: Chrome DevTools
-  - item: MariaDB
-  - item: Yacc
-  - item: Bison
   - item: Postman
-  - item: PostgreSQL
   - item: JFLAP
   - item: Wireshark
   - item: Network Simulator
   - item: Figma
-  - item: Knex
-  - item: LEGO Mindstorms
-  - item: Gulp 
   - item: GitLab
   - item: Google Cloud Platform
   - item: Mocha

@@ -16,14 +16,15 @@
         <div class="job__activities">
           <ul>
             {% for activity in job.activities %}
-            <li>{{activity}}</li>
+            <li>• {{activity}}</li>
             {% endfor %}
           </ul>
         </div>
       {% endfor %}
     </div>
-    
-    <a href="{{site.resume}}" target="_blank" class="arrow-link">View My Resume</a>
-    <a href="{{site.cv}}" target="_blank" class="arrow-link">View My Curriculum Vitae</a>
+    <span> View my </span>
+    <a href="{{site.resume}}" target="_blank" class="underline-link">Resume</a>
+    <span> and </span>
+    <a href="{{site.cv}}" target="_blank" class="underline-link">CV</a>
   </div>
 </section>

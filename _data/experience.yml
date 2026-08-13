@@ -1,9 +1,10 @@
 - company: i-BRIDGE Systems Philippines Inc.
   url: https://www.i-bridge.com.ph/
   time: June - August 2025
-  position: Software Developer Intern
+  position: Web Developer Intern
   activities:
-    - Web Development
-    - Full Stack Development
-    - Unit and Integration testing
-    - Cloud Deployment
+    - Contributed to Agile sprint management and development workflows using GitLab, Redmine, and Microsoft Office for collaboration, task tracking, and project documentation
+    - Designed and implemented additional user interface components for an internal tool using the MERN stack
+    - Developed and integrated additional database fields to support the new components
+    - Conducted preliminary unit and integration testing using Mocha and Chai to identify and resolve issues before deployment
+    - Deployed the new features to Google Cloud Platform
