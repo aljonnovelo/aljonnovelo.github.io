@@ -63,6 +63,50 @@ a {
   color: inherit;
 }
 
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 1;
+  color: $blue;
+  font-size: 0.9rem;
+
+  @include mobile {
+    top: 10px;
+    left: 20px;
+  }
+}
+
+.site-nav {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  ul {
+    display: flex;
+    gap: 30px;
+  }
+
+  a {
+    color: $blue;
+    font-size: 0.9rem;
+  }
+
+  @include mobile {
+    top: 48px;
+
+    ul {
+      gap: 18px;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;

@@ -20,29 +20,36 @@ $(function() {
     }
   });
 
-  const introHeight = document.querySelector('.intro').offsetHeight;
+  const intro = document.querySelector('.intro');
   const topButton = document.getElementById('top-button');
-  const $topButton = $('#top-button');
+  if (intro && topButton) {
+    const introHeight = intro.offsetHeight;
+    const $topButton = $('#top-button');
 
-  window.addEventListener(
-    'scroll',
-    function() {
-      if (window.scrollY > introHeight) {
-        $topButton.fadeIn();
-      } else {
-        $topButton.fadeOut();
-      }
-    },
-    false
-  );
+    window.addEventListener(
+      'scroll',
+      function() {
+        if (window.scrollY > introHeight) {
+          $topButton.fadeIn();
+        } else {
+          $topButton.fadeOut();
+        }
+      },
+      false
+    );
 
-  topButton.addEventListener('click', function() {
-    $('html, body').animate({ scrollTop: 0 }, 500);
-  });
+    topButton.addEventListener('click', function() {
+      $('html, body').animate({ scrollTop: 0 }, 500);
+    });
+  }
 
   const hand = document.querySelector('.emoji.wave-hand');
 
   function waveOnLoad() {
+    if (!hand) {
+      return;
+    }
+
     hand.classList.add('wave');
     setTimeout(function() {
       hand.classList.remove('wave');
@@ -53,13 +60,15 @@ $(function() {
     waveOnLoad();
   }, 1000);
 
-  hand.addEventListener('mouseover', function() {
-    hand.classList.add('wave');
-  });
+  if (hand) {
+    hand.addEventListener('mouseover', function() {
+      hand.classList.add('wave');
+    });
 
-  hand.addEventListener('mouseout', function() {
-    hand.classList.remove('wave');
-  });
+    hand.addEventListener('mouseout', function() {
+      hand.classList.remove('wave');
+    });
+  }
 
   window.sr = ScrollReveal({
     reset: false,
