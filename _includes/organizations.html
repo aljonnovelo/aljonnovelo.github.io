@@ -9,10 +9,30 @@
             <span class="job__company">
               <a href="{{job.url}}" class="underline-link" target="_blank">{{job.company}}</a>
             </span>
-            <span class="job__position"> | {{job.position}}</span>
           </div>
           <div class="job__time">{{job.time}}</div>
         </div>
+        {% if job.photos and job.photos.size > 0 %}
+        <div class="organization-carousel" data-organization-carousel>
+          <div class="organization-carousel__frame">
+            {% for photo in job.photos %}
+            <img
+              class="organization-carousel__slide"
+              src="{{ photo | relative_url }}"
+              alt="{{job.company}} photo {{forloop.index}}"
+              {% unless forloop.first %}hidden{% endunless %}
+            >
+            {% endfor %}
+          </div>
+          {% if job.photos.size > 1 %}
+          <div class="organization-carousel__controls">
+            <button type="button" data-carousel-prev aria-label="Previous photo of {{job.company}}">Previous</button>
+            <span data-carousel-status aria-live="polite">1 / {{job.photos.size}}</span>
+            <button type="button" data-carousel-next aria-label="Next photo of {{job.company}}">Next</button>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
         <div class="job__activities">
           <ul>
             {% for activity in job.activities %}

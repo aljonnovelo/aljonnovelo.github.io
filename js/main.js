@@ -1,4 +1,34 @@
 $(function() {
+  document
+    .querySelectorAll('[data-organization-carousel]')
+    .forEach(function(carousel) {
+      const slides = carousel.querySelectorAll('.organization-carousel__slide');
+      const status = carousel.querySelector('[data-carousel-status]');
+      const previous = carousel.querySelector('[data-carousel-prev]');
+      const next = carousel.querySelector('[data-carousel-next]');
+      let activeSlide = 0;
+
+      if (slides.length < 2) {
+        return;
+      }
+
+      function showSlide(index) {
+        activeSlide = (index + slides.length) % slides.length;
+        slides.forEach(function(slide, slideIndex) {
+          slide.hidden = slideIndex !== activeSlide;
+        });
+        status.textContent = activeSlide + 1 + ' / ' + slides.length;
+      }
+
+      previous.addEventListener('click', function() {
+        showSlide(activeSlide - 1);
+      });
+
+      next.addEventListener('click', function() {
+        showSlide(activeSlide + 1);
+      });
+    });
+
   const d = new Date();
   const hours = d.getHours();
   const night = hours >= 19 || hours <= 7; // between 7pm and 7am
@@ -6,50 +36,44 @@ $(function() {
   const toggle = document.getElementById('toggle');
   const input = document.getElementById('switch');
 
-  if (night) {
-    input.checked = true;
-    body.classList.add('night');
-  }
+  // if (night) {
+  //   input.checked = true;
+  //   body.classList.add('night');
+  // }
 
-  toggle.addEventListener('click', function() {
-    const isChecked = input.checked;
-    if (isChecked) {
-      body.classList.remove('night');
-    } else {
-      body.classList.add('night');
-    }
-  });
+  // toggle.addEventListener('click', function() {
+  //   const isChecked = input.checked;
+  //   if (isChecked) {
+  //     body.classList.remove('night');
+  //   } else {
+  //     body.classList.add('night');
+  //   }
+  // });
 
-  const intro = document.querySelector('.intro');
+  body.classList.add('night');
+  const introHeight = document.querySelector('.intro').offsetHeight;
   const topButton = document.getElementById('top-button');
-  if (intro && topButton) {
-    const introHeight = intro.offsetHeight;
-    const $topButton = $('#top-button');
+  const $topButton = $('#top-button');
 
-    window.addEventListener(
-      'scroll',
-      function() {
-        if (window.scrollY > introHeight) {
-          $topButton.fadeIn();
-        } else {
-          $topButton.fadeOut();
-        }
-      },
-      false
-    );
+  window.addEventListener(
+    'scroll',
+    function() {
+      if (window.scrollY > introHeight) {
+        $topButton.fadeIn();
+      } else {
+        $topButton.fadeOut();
+      }
+    },
+    false
+  );
 
-    topButton.addEventListener('click', function() {
-      $('html, body').animate({ scrollTop: 0 }, 500);
-    });
-  }
+  topButton.addEventListener('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 500);
+  });
 
   const hand = document.querySelector('.emoji.wave-hand');
 
   function waveOnLoad() {
-    if (!hand) {
-      return;
-    }
-
     hand.classList.add('wave');
     setTimeout(function() {
       hand.classList.remove('wave');
@@ -60,15 +84,13 @@ $(function() {
     waveOnLoad();
   }, 1000);
 
-  if (hand) {
-    hand.addEventListener('mouseover', function() {
-      hand.classList.add('wave');
-    });
+  hand.addEventListener('mouseover', function() {
+    hand.classList.add('wave');
+  });
 
-    hand.addEventListener('mouseout', function() {
-      hand.classList.remove('wave');
-    });
-  }
+  hand.addEventListener('mouseout', function() {
+    hand.classList.remove('wave');
+  });
 
   window.sr = ScrollReveal({
     reset: false,

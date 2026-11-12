@@ -14,6 +14,7 @@ html {
 
 html,
 body {
+  font-size: 18px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -140,7 +141,7 @@ strong {
 .section {
   display: flex;
   justify-content: center;
-  padding: 100px 170px;
+  padding: 170px;
   @include thirteen {
     padding: 100px;
   }
@@ -151,7 +152,7 @@ strong {
     display: block;
   }
   @include mobile {
-    padding: 50px 35px;
+    padding: 150px 35px;
   }
   &__title {
     flex-shrink: 0;
@@ -215,6 +216,16 @@ strong {
       }
     }
   }
+}
+
+.background .section__content > img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .arrow-link {

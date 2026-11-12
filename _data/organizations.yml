@@ -2,6 +2,15 @@
   url: https://www.facebook.com/uplbpahinungod
   time: March 2023 - Present
   position: Volunteer
+  photos: 
+    - img/experience/pahinungod/maahas.jpg
+    - img/experience/pahinungod/batch41.jpg
+    - img/experience/pahinungod/batch42.jpg
+    - img/experience/pahinungod/cas.jpg
+    - img/experience/pahinungod/cat.jpg
+    - img/experience/pahinungod/ceat.jpg
+    - img/experience/pahinungod/hume.jpg
+    - img/experience/pahinungod/mhpss.jpg
   activities:
     - title: Co-Facilitator
       event: Maahas Elementary School READ Session
@@ -50,8 +59,19 @@
   url: https://www.facebook.com/kapwasauplb
   time: March 2022 - July 2026
   position: Resident Member
+  photos:
+    - img/experience/kapwa/mayo.jpg
+    - img/experience/kapwa/anniv.jpg
+    - img/experience/kapwa/iraya.jpg
+    - img/experience/kapwa/iraya2.jpg
+    - img/experience/kapwa/lugaw.jpg
+    - img/experience/kapwa/lugaw2.jpg
+    - img/experience/kapwa/lugaw3.jpg
+    - img/experience/kapwa/orie.jpg
+    - img/experience/kapwa/orie2.jpg
+    - img/experience/kapwa/orie3.jpg
   activities:
-    - title: Socio-Cultural Committee Member
+    - title: Project Head
       event: February Protest Fair
       contributions:
         - Led the participation of the organization in the annual UPLB February Protest Fair
@@ -88,6 +108,9 @@
   url: https://www.facebook.com/uplbSJDC
   time: October 2022 - July 2026
   position: Resident Member
+  photos: 
+    - img/experience/sjdc/verve72.jpg
+    - img/experience/sjdc/verve7.jpg
   activities:
     - title : Technical Director
       event: VERVE 7 Versus the Odds
@@ -108,6 +131,9 @@
   url: https://www.facebook.com/uplbcasfc
   time: November 2021 - October 2022
   position: External Affairs Co-Head
+  photos:
+    - img/experience/casfc/casama.jpg
+    - img/experience/casfc/casinag.jpg
   activities:
     - title: External Affairs Committee Co-Head
       event: UPLB CASFC
